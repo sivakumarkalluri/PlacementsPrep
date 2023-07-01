@@ -1,0 +1,94 @@
+<div class="backButtonDiv mb-4">
+  <div>
+    <button class="btn text-center backButton" routerLink="/adminHome/adminEditExams"><span><i class="fa fa-arrow-left"></i></span></button>
+  </div>
+</div>
+<div [hidden]="viewQuestions" class="viewQuestions">
+    <div class="container">
+      <h4>Questions of <span class="fw-bold">{{examName}}</span> Exam</h4>
+      <div class="col-md-12 p-4" *ngFor="let question of questionsData; let i = index">
+        <div class="card p-2">
+            <form [formGroup]="questionForm">
+          <div class="questionDesc">
+            <span class="fw-bold fs-6">Q. {{i+1}}) </span>
+            <span *ngIf="!question.editMode">{{ question.question_desc }}</span>
+            <label *ngIf="question.editMode">Question Description</label>
+            <input *ngIf="question.editMode" formControlName="question_desc" class="form-control">
+            <div class="error-message"  *ngIf="questionForm.get('question_desc')?.invalid && questionForm.get('question_desc')?.touched">
+              <small class="text-danger">Please enter the question description.</small>
+            </div>
+          </div>
+  
+          <div class="row ml-2 mt-2">
+            <div class="col-md-6 op">
+              <span *ngIf="!question.editMode" class="fw-bold">1) </span>
+              <span *ngIf="!question.editMode">{{ question.option_1 }}</span>
+              <label *ngIf="question.editMode">Option 1</label>
+              <input *ngIf="question.editMode" formControlName="option_1" class="form-control">
+              <div class="error-message" *ngIf="questionForm.get('option_1')?.invalid && questionForm.get('option_1')?.touched">
+                <small class="text-danger">Please enter option 1.</small>
+              </div>
+            </div>
+            <div class="col-md-6 op">
+              <span *ngIf="!question.editMode" class="fw-bold">2) </span>
+              <span *ngIf="!question.editMode">{{ question.option_2 }}</span>
+              <label *ngIf="question.editMode">Option 2</label>
+              <input *ngIf="question.editMode" formControlName="option_2" class="form-control">
+              <div class="error-message" *ngIf="questionForm.get('option_2')?.invalid && questionForm.get('option_2')?.touched">
+                <small class="text-danger">Please enter option 2.</small>
+              </div>
+            </div>
+            <div class="col-md-6 op">
+              <span *ngIf="!question.editMode" class="fw-bold">3) </span>
+              <span *ngIf="!question.editMode">{{ question.option_3 }}</span>
+              <label *ngIf="question.editMode">Option 3</label>
+              <input *ngIf="question.editMode" formControlName="option_3" class="form-control">
+              <div class="error-message" *ngIf="questionForm.get('option_3')?.invalid && questionForm.get('option_3')?.touched">
+                <small class="text-danger">Please enter option 3.</small>
+              </div>
+            </div>
+            <div class="col-md-6 op">
+              <span *ngIf="!question.editMode" class="fw-bold">4) </span>
+              <span *ngIf="!question.editMode">{{ question.option_4 }}</span>
+              <label *ngIf="question.editMode">Option 4</label>
+              <input *ngIf="question.editMode" formControlName="option_4" class="form-control">
+              <div class="error-message" *ngIf="questionForm.get('option_4')?.invalid && questionForm.get('option_4')?.touched">
+                <small class="text-danger">Please enter option 4.</small>
+              </div>
+            </div>
+          </div>
+  
+          <div class="col-md-6 mt-3 op">
+            <span class="fw-bold fs-6">Correct Answer : </span>
+            <span *ngIf="!question.editMode">{{ question.correctAnswer }}</span>
+            <ng-container *ngIf="question.editMode">
+              <select class="form-select" formControlName="correctAnswer">
+                <option value="1">Option 1</option>
+                <option value="2">Option 2</option>
+                <option value="3">Option 3</option>
+                <option value="4">Option 4</option>
+              </select>
+              <div class="error-message" *ngIf="questionForm.get('correctAnswer')?.invalid && questionForm.get('correctAnswer')?.touched">
+                <small class="text-danger">Please select a correct answer.</small>
+              </div>
+            </ng-container>
+          </div>
+          <hr>
+          <div class="col-md-12 d-flex gap-2">
+            <button class="btn" style="background-color: rgb(58, 58, 169); font-size: 12px; color: white;"
+              (click)="editQuestion(question)">
+              <i class="fa fa-pencil mr-1"></i> Edit
+            </button>
+            <button class="btn btn-danger" style="color: white; font-size: 12px;" (click)="deleteQuestion(question.question_id)">
+              <i class="fa fa-trash mr-1"></i> Delete
+            </button>
+            <button class="btn btn-success" style="color: white; font-size: 12px;" *ngIf="question.editMode" (click)="saveQuestion(question,question.question_id,i+1)">
+              <i class="fa fa-check mr-1"></i> Save Changes
+            </button>
+          </div>
+            </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  

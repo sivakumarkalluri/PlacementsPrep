@@ -1,0 +1,15 @@
+th{
+    background-color: #3C1975;
+    color:white
+}
+.heading{
+    font-family: 'Montserrat', sans-serif;
+  
+  }
+  .table-container{
+    width: 100%;
+    overflow-x: auto;
+  }
+  #editExams{
+    padding: 2rem;
+  }

@@ -1,0 +1,27 @@
+<h1 class="examsHeading">Our Popular Exams</h1>
+<div id="examsSection">
+    <div class="row g-3 examRow justify-content-center">
+      <div *ngFor="let category of transformedData" class="col-12 categories">
+        <div class="d-flex g-2 align-content-center mb-4">
+            <img src="assets/category_logo.png" alt="..." class="rounded-circle mr-4 catLogo">
+            <p class="catHeading">{{category.category_Name}}</p>
+          </div>
+         
+        <div class="row">
+          <div *ngFor="let exam of category.exams" class="col-md-4">
+            <div class="card exam">
+              <img [src]="getImagePath(exam.exam_Name)" class="card-img-top displayImg" alt="..." style="height: 195px;" />
+              <h4 class="examHeading">{{ exam.exam_Name }}</h4>
+              <div class="examContent">
+                <p>{{ getExamDescription(exam.exam_Id) }}</p>
+                <button type="submit" class="btn-pink submit-btn test-btn" (click)="TakeTest(exam.exam_Id)">Take Test<i class="fa-solid fa-arrow-right"></i></button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <hr>
+      </div>
+    </div>
+  </div>
+  
+  

@@ -1,0 +1,95 @@
+<div class="backButtonDiv mb-4">
+  <div>
+    <button class="btn text-center backButton" routerLink="/userHome/userResults">
+      <span><i class="fa fa-arrow-left"></i></span>
+    </button>
+  </div>
+</div>
+
+<div class="viewQuestions">
+  <div class="container">
+    <h4 class="mb-4" style="    font-family: 'Montserrat', sans-serif;    ">Answer Sheet of <span class="fw-bold fs-2" style="color: rgb(56, 56, 179);">{{answerSheet[0]?.exam_Name}}</span> Exam Attempted on <span style="color: rgb(56, 56, 179);">{{formatDateTime(answerSheet[0]?.attemptedAt)}}</span></h4>
+    <div class="d-flex justify-content-between align-content-center marksCard">
+      <p class="fw-bold fs-6">Total Exam Marks : <span class="fw-bold fs-5">{{answerSheet[0].exam_Total}}</span></p>
+      <p class="fw-bold fs-6">Total Marks Obtained: <span  class="fw-bold fs-5">{{answerSheet[0].total_MarksObtained}}</span></p>
+      <p class="fw-bold fs-6" >Status : <span  class="fw-bold fs-5" [ngClass]="answerSheet[0].passOrFail">{{answerSheet[0].passOrFail}}</span></p>
+
+      
+
+
+    </div>
+
+    <div class="col-md-12 mb-4" *ngFor="let question of answerSheet; let i = index">
+      <div class="card">
+        <div class="questionDesc mb-4">
+          <span class="fw-bold fs-6">Q. {{i+1}}) </span>
+          <span class="fw-bold fs-6">{{ question?.question_Desc }}</span>
+        </div>
+
+        <div class="row Options">
+          <div class="col-md-6">
+            <div class="form-check">
+              <input class="form-check-input" type="radio" [value]="1" name="option" [disabled]="true"
+                [ngClass]="{
+                  'selected-option': (question?.answer === question?.correctAnswer && question?.correctAnswer === 1) || (question?.answer === null && question?.correctAnswer === 1 || question?.correctAnswer === 1),
+                  'wrong-option': question?.answer !== null && question?.answer === 1 && question?.correctAnswer !== 1
+                }">
+              <label class="form-label" >
+                {{question?.option_1}}
+              </label>
+            </div>
+          </div>
+
+          <div class="col-md-6">
+            <div class="form-check">
+              <input class="form-check-input" type="radio" [value]="2" name="option" [disabled]="true"
+                [ngClass]="{
+                  'selected-option': (question?.answer === question?.correctAnswer && question?.correctAnswer === 2) || (question?.answer === null && question?.correctAnswer === 2 || question?.correctAnswer === 2),
+                  'wrong-option': question?.answer !== null && question?.answer === 2 && question?.correctAnswer !== 2
+                }">
+              <label class="form-label" >
+                {{question?.option_2}}
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-check">
+              <input class="form-check-input" type="radio" [value]="3" name="option" [disabled]="true"
+                [ngClass]="{
+                  'selected-option': (question?.answer === question?.correctAnswer && question?.correctAnswer === 3) || (question?.answer === null && question?.correctAnswer === 3 || question?.correctAnswer === 3),
+                  'wrong-option': question?.answer !== null && question?.answer === 3 && question?.correctAnswer !== 3
+                }">
+              <label class="form-label" >
+                {{question?.option_3}}
+              </label>
+            </div>
+          </div>
+
+          <div class="col-md-6">
+            <div class="form-check">
+              <input class="form-check-input" type="radio" [value]="4" name="option" [disabled]="true"
+                [ngClass]="{
+                  'selected-option': (question?.answer === question?.correctAnswer && question?.correctAnswer === 4) || (question?.answer === null && question?.correctAnswer === 4 || question?.correctAnswer === 4),
+                  'wrong-option': question?.answer !== null && question?.answer === 4 && question?.correctAnswer !== 4
+                }">
+              <label class="form-label" >
+                {{question?.option_4}}
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <p *ngIf="question?.answer !== null && question?.answer === question?.correctAnswer" class="text-success fw-bold atm">Correct Answer!</p>
+        <p *ngIf="question?.answer !== null && question?.answer !== question?.correctAnswer" class="text-danger fw-bold atm">Wrong Answer!</p>
+        <p *ngIf="question?.answer === null"  class="text-primary fw-bold atm" >Not Attempted !</p>
+
+
+        <p *ngIf="question?.answer !== null && question?.answer === question?.correctAnswer">Mark : <span class="fw-bold "> + {{question.question_Mark}} </span></p>
+        <p *ngIf="question?.answer !== null && question?.answer !== question?.correctAnswer || question?.answer==null" >Mark : <span class="fw-bold"> 0 </span></p>
+      </div>
+    </div>
+  </div>
+</div>

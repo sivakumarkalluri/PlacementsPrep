@@ -1,0 +1,50 @@
+<div id="studentsTable">
+  <h1 class="heading">User Data</h1>
+    <div class="main">
+        <div class="form-group has-search">
+          <span class="fa fa-search form-control-feedback"></span>
+          <input type="text" class="form-control" placeholder="Search By Name" [(ngModel)]="firstName" (ngModelChange)="search()" >
+        </div>
+        <div class="form-group has-search">
+          <span class="fa fa-search form-control-feedback"></span>
+          <input type="text" class="form-control" placeholder="Search By Email" [(ngModel)]="email" (ngModelChange)="search()" >
+        </div>
+    </div>
+
+    <br>
+    <div class="table-container">
+
+    <table class="table table-striped table-bordered">
+        <thead>
+            <tr>
+                <th (click)="sort('userId')">User ID <i class="fa fa-sort" ></i></th>
+                <th (click)="sort('firstName')">First Name <i class="fa fa-sort" ></i></th>
+                <th (click)="sort('lastName')">Last Name<i class="fa fa-sort" ></i></th>
+                <th (click)="sort('email ')">Email <i class="fa fa-sort" ></i></th>
+                <th (click)="sort('mobile')">Mobile <i class="fa fa-sort" ></i></th>
+                <th (click)="sort('gender')">Gender <i class="fa fa-sort" ></i></th>
+                <th (click)="sort('registeredAt')">Registered At <i class="fa fa-sort" ></i></th>
+                <th (click)="sort('numberOfExamsWritten')">Exams Written <i class="fa fa-sort" ></i></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let user of usersData | paginate:{ itemsPerPage: 5, currentPage: P } | orderBy:key:reverse">
+                <td >{{ user.userId }}</td>
+                <td>{{ user.firstName }}</td>
+                <td>{{ user.lastName }}</td>
+                <td>{{ user.email }}</td>
+                <td>{{ user.mobile }}</td>
+                <td>{{ user.gender }}</td>
+                <td>{{ user.registeredAt }}</td>
+                <td>{{ user.numberOfExamsWritten }}</td>
+            </tr>
+        </tbody>
+
+    </table>
+    </div>
+    <div class="mt-4">
+    <pagination-controls  (pageChange)="P = $event" ></pagination-controls>
+    </div>
+
+
+</div>

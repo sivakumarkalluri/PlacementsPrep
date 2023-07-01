@@ -1,0 +1,75 @@
+.avatar {
+  width: 250px;
+  height: 250px;
+}
+.row_pass {
+  display: none; /* Hide the new password and confirm password fields initially */
+}
+
+.btnAction {
+  color: white;
+  background-color: #3c1975;
+}
+.profile {
+  color: #1a0e5f;
+  font-family: "Montserrat", sans-serif;
+}
+.profileCard {
+  padding: 1%;
+  background-color: white;
+}
+
+thead th {
+  background-color: #3c1975;
+  color: white;
+}
+thead tr th {
+  font-size: 14px;
+  text-align: center;
+}
+tbody tr td {
+  font-size: 12px;
+  text-align: center;
+}
+table {
+  width: 100%;
+  margin: auto;
+}
+.main {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+
+  /* margin-left: 150px; */
+}
+.form-group has-search {
+  margin-right: 120px;
+}
+.has-search .form-control {
+  padding-left: 2.375rem;
+}
+
+.has-search .form-control-feedback {
+  position: absolute;
+  z-index: 2;
+  display: block;
+  width: 2.375rem;
+  height: 2.375rem;
+  line-height: 2.375rem;
+  text-align: center;
+  pointer-events: none;
+  color: #aaa;
+}
+.heading {
+  font-family: "Montserrat", sans-serif;
+}
+.adminsList {
+  font-family: "Montserrat", sans-serif;
+}
+.table-container {
+  width: 100%;
+  overflow-x: auto;
+}
+#adminProfile{
+  padding: 2rem;
+}

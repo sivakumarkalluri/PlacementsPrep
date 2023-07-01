@@ -1,0 +1,96 @@
+.card {
+    height: 170px;
+  }
+  
+  .card-header {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .dashicon{
+   gap: 30px;
+  }
+  .Stat{
+font-size: 45px;
+  }
+
+#userDashboard{
+  background-color: #eceff1;
+  padding: 2rem;
+}
+  @media (max-width: 992px) {
+    /* For medium-sized screens (tablets, landscape smartphones) */
+    .card {
+     height: 140px;
+    }
+    
+  .dashicon{
+    gap: 20px;
+   }
+
+   
+  .chart-container {
+    display: flex;
+    margin-top: 30px;
+    justify-content: space-between;
+    height: 400px;
+  }
+  
+  .chart-wrapper {
+    width: 50%;
+    padding: 30px;
+    margin: 7px;
+    /* background-color: #f8f8f8; */
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .chart-wrapper h3 {
+    text-align: center;
+    margin-bottom: 7px;
+  }
+  
+  .chart-wrapper canvas {
+    width: 100%;
+    height: 80%;
+  }
+  }
+
+  @media (max-width: 768px) {
+    /* For small screens (portrait smartphones) */
+    .card {
+      padding: 0%;
+      font-size: 16px;
+      width: 150px;
+      height: 150px;
+     }
+     #userDashboard{
+      
+      padding: 1rem;
+     }
+     .cardheader{
+      font-size: 16px;
+     }
+     
+   .dashicon{
+     gap: 20px;
+    }
+    .cardIcon{
+      font-size: 25px;
+    }
+ 
+    .Stat{
+      font-size: 20px;
+    }
+    
+   
+  }
+
+  @media (max-width: 767px) {
+    .wrapper{
+      height: 500px !important;
+
+    }
+  }

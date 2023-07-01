@@ -1,0 +1,21 @@
+<!-- <table>
+    <tr>
+      <th>Category Name</th>
+      <th>Exam Name</th>
+      <th>Total Questions</th>
+    </tr>
+    <tbody>
+      <tr v-for="(exam, index) in examData" :key="index">
+        <template v-if="index === 0 || exam.category_Name !== exam[index - 1].exam_Name">
+          <td :rowspan="getRowSpan(exam.category_Name)">{{ exam.category_Name }}</td>
+          <td>{{ exam.exam_Name }}</td>
+          <td>{{ exam.exam_totalquestion }}</td>
+        </template>
+        <template v-else>
+          <td>{{ exam.exam_Name }}</td>
+          <td>{{ exam.exam_totalquestion }}</td>
+        </template>
+      </tr>
+    </tbody>
+  </table>
+   -->

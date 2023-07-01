@@ -1,0 +1,56 @@
+<app-nav-bar></app-nav-bar>
+<div class="container-fluid px-1 px-md-5 px-lg-1 px-xl-5 py-5 mx-auto">
+    <div class="card card0 border-0">
+        <div class="row d-flex">
+            <div class="col-lg-6">
+                <div class="card1 pb-5">
+                    <div class="row">
+                        <img src="assets/logo.png" class="logo" style="width: 180px; height: 70px;">
+                    </div>
+                    <div class="row px-3 justify-content-center mt-4 mb-5 border-line">
+                        <img src="https://i.imgur.com/uNGdWHi.png" class="image">
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="card2 card border-0 px-4 py-5">
+                    <div class="row mb-4 px-3">
+                        <h2 class="mb-4 mr-4 mt-2" style="text-align: center;">User Login</h2>
+                    </div>
+                    <form [formGroup]="loginForm" (ngSubmit)="loginSubmit()">
+                    <div class="row px-3">
+                        <label class="mb-1"><h6 class="mb-0 text-sm">Email Address</h6></label>
+                        <input class="mb-4" type="text" name="email" formControlName="email" placeholder="Enter a valid email address">
+                        <div class="form text text-danger" *ngIf="Email.errors?.['required'] && (Email.touched || Email.dirty)">
+                            <small>Email is Required</small>
+                        </div>
+                        <div class="form text text-danger" *ngIf="Email.errors?.['email'] && (Email.touched || Email.dirty)">
+                            <small>Email is Invalid</small> 
+                        </div>
+                    </div>
+                    <div class="row px-3">
+                        <label class="mb-1"><h6 class="mb-0 text-sm">Password</h6></label>
+                        <input type="password" name="password" formControlName="pwd" placeholder="Enter password">
+                        <div class="form text text-danger" *ngIf="Pwd.errors?.['required'] && (Email.touched || Email.dirty)">
+                            <small>Password is Required</small>
+                        </div>
+                    </div>
+                    <div class="row px-3 mb-4">
+                        
+                        <!-- <a href="#" class="ml-auto mb-0 text-sm">Forgot Password?</a> -->
+                    </div>
+                    <div class="row mb-3 px-3">
+                        <button type="submit" class="btn btn-blue text-center" [disabled]="loginForm.invalid">Login</button>
+                    </div>
+                    <div class="row mb-4 px-3">
+                        <small class="font-weight-bold">Don't have an account? <a class="text-danger " routerLink="/signUpPage">Register</a></small>
+                    </div>
+                </form>
+                </div>
+            
+            </div>
+        
+        </div>
+        
+    </div>
+</div>

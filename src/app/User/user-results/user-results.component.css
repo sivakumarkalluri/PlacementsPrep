@@ -1,0 +1,45 @@
+.table-container {
+    width: 100%;
+    overflow-x: auto;
+  }
+  
+thead th{
+    background-color: #3C1975;
+    color: white;
+}
+thead tr th{
+    font-size: 14px;
+}
+tbody tr td{
+    font-size: 12px;
+
+}
+table{
+    margin: auto;
+}
+#resultHead{
+  font-family: 'Montserrat', sans-serif;
+}
+
+.dropdown-container {
+    display: flex;
+    /* justify-content: space-between; */
+    gap: 10px; 
+    margin-bottom: 10px;
+}
+
+#example {
+    width: 100%; /* Adjust as needed */
+  }
+  .Pass{
+    
+    color: green;
+  }
+  .Fail{
+    color: red;
+  }
+  @media (max-width: 600px) {
+    #userResult{
+      padding: 20px;
+    }
+  }

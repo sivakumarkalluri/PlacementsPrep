@@ -1,0 +1,67 @@
+.nav_action{
+    margin-right: 15px;
+}
+.nav-link:hover{
+    background-color: #3C1975;
+    color: white;
+    transition: all 0.3s ease-in-out;
+    border-radius: 5px;
+}
+.nav-link{
+    border-radius: 5px;
+    font-weight: bold;
+    margin-right: 1rem;
+}
+.dashButton{
+    color: white;
+    background-color: #3C1975;
+    transform: scale(1);
+    box-shadow: 4px 4px 4px gray;
+    font-weight: bold;
+
+
+    transition: all 0.3s ease-in-out;
+
+}
+
+.logout{
+    background-image: linear-gradient(to right top, #cd4f54, #ce4a53, #d04452, #d13d51, #d23650, #cf304b, #cd2a47, #ca2342, #c21e38, #ba182e, #b21425, #a90f1b);
+    color: white;
+
+    transform: scale(1);
+    font-weight: bold;
+    box-shadow: 4px 4px 4px gray;
+
+    transition: all 0.3s ease-in-out;
+}
+.nav_action:hover{
+    transform: scale(0.95);
+    box-shadow: 2px 2px 2px gray;
+    transition: all 0.3s ease-in-out;
+
+}
+.login{
+    font-weight: bold;
+    border-width: 1px;
+    box-shadow: 4px 4px 4px gray;
+    transition: all 0.3s ease-in-out;
+    color: #3C1975;
+    
+    border-color: blue;
+
+
+    
+}
+.login:hover{
+    background-color: #3C1975;
+    color: white;
+}
+
+.signUp{
+    background-color: #3C1975;
+    color: white;
+
+    box-shadow: 4px 4px 4px gray;
+    transition: all 0.3s ease-in-out;
+
+}

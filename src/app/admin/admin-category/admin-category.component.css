@@ -1,0 +1,65 @@
+
+.actionBtn i{
+    
+    color: white;
+}
+.category{
+    box-shadow: 3px 3px 3px rgb(165, 164, 164);
+}
+#categoryComponent{
+    padding: 2rem;
+    
+    font-weight: normal;
+}
+.catLogo{
+    max-width: 50px;
+    max-height: 50px;
+}
+.catHeading{
+    font-family: 'Montserrat', sans-serif;
+    color: rgb(82, 81, 81);
+}
+#addBtn{
+    font-size: 40px;
+}
+#addBtn:hover{
+    transform: scale(0.98);
+    transition: all 0.3s ease-in-out;
+}
+#addCategory{
+    transition: all 0.3s ease-in-out;
+
+}
+.catHeading{
+    font-size: 30px;
+}
+
+#addCategory:hover{
+    cursor: pointer;
+    transform: scale(0.98);
+    transition: all 0.3s ease-in-out;
+}
+@media (max-width: 768px) {
+.catContent{
+    font-size: 14px;
+}
+.catHeading{
+    font-size: 14px;
+}
+#addBtn{
+    font-size: 20px;
+
+}
+.catLogo{
+    max-width: 20px;
+    max-height: 20px;
+}
+.actionBtn{
+    font-size: 14px;
+}
+}
+.toast-success {
+    padding: 5px;
+    color: white;
+    width: 200px;
+   }

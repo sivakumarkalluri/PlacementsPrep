@@ -1,0 +1,35 @@
+.selected-option {
+    background-color: rgb(4, 101, 4); /* Green color */
+    color: #000000; /* Black text color */
+    border: 1px solid black;
+  }
+  
+  .wrong-option {
+    background-color: red; /* Red color */
+    color: #000000; /* Black text color */
+    border: 1px solid black;
+
+  }
+  .card{
+    padding-top: 1%;
+    padding-left: 1%;
+    box-shadow: 4px 4px 4px rgb(182, 182, 182);
+    padding-right: 1%;
+  }
+  .atm{
+    border-bottom: 1px solid grey;
+  }
+  .Pass{
+    
+    color: green;
+  }
+  .Fail{
+    color: red;
+  }
+  .marksCard{
+    margin-bottom: 10px;
+    border-radius: 5px;
+    color: white;
+    padding: 2%;
+    background-image: linear-gradient(to right top, #5c5cf6, #4a5de5, #3c5cd3, #335bc0, #2f58ad, #2c51a1, #294b95, #26448a, #213983, #1e2d7b, #1c2173, #1c136a);
+  }

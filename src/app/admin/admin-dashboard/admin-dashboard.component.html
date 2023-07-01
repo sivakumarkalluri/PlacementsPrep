@@ -1,0 +1,118 @@
+<div id="adminDashboard">
+    
+  <div class="container" style="margin-left: 10px;">
+
+    <div class="row sm-gap-2" *ngIf="adminStats">
+      
+      <div class="col-lg-3 col-md-4 col-sm-6 col gap-2">
+        <div class="card text-center dashboardCard">
+          <div class="card-header bg-success text-white">
+            <div class="row align-items-center">
+              <div class="row">
+                  <div class="d-flex justify-content-center align-content-center dashicon">
+                      <i class="fa fa-address-card fa-4x sm-fa-3x"></i>
+                      <p class="display-4">{{adminStats.totalUsers}}</p>
+                  </div>
+                  <h6>Total Registered Users</h6>
+              </div>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-4 col-sm-6 col mb-4">
+        <div class="card text-center dashboardCard">
+          <div class="card-header bg-info text-white">
+            <div class="row align-items-center">
+              <div class="row">
+                  <div class="d-flex justify-content-around align-content-center">
+                      <i class="fa fa-list fa-xl-4x fa-sm-2x fa-4x"></i>
+                      <p class="display-4">{{adminStats.totalCategories}}</p>
+                  </div>
+                  <h6>Total Categories</h6>
+              </div>
+            </div>
+          </div>
+          
+          
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-4 col-sm-6 col mb-4">
+        <div class="card text-center dashboardCard">
+          <div class="card-header bg-primary text-white">
+            <div class="row align-items-center">
+              <div class="row">
+                  <div class="d-flex justify-content-around align-content-center">
+                    <i class="fa-solid fa-file-pen  fa-xl-4x fa-sm-2x fa-4x"></i>
+                      <p class="display-4">{{adminStats.totalExams}}</p>
+                  </div>
+                  <h6>Total Exams</h6>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-4 col-sm-6 col">
+        <div class="card text-center dashboardCard">
+          <div class="card-header bg-warning text-white">
+            <div class="row align-items-center">
+              <div class="row">
+                  <div class="d-flex justify-content-around align-content-center">
+                      <i class="fa fa-list-alt fa-4x"></i>
+                      <p class="display-4">{{adminStats.studentsTakenAtLeastOneExam
+                      }}</p>
+                  </div>
+                  <h6>Students attempted atleast one Exam</h6>
+              </div>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-4 col-sm-6 col">
+          <div class="card text-center dashboardCard">
+            <div class="card-header bg-danger text-white">
+              <div class="row align-items-center">
+                  <div class="row">
+                      <div class="d-flex justify-content-around align-content-center">
+                          <i class="fa fa-exclamation-triangle fa-4x"></i>
+                          <p class="display-4">{{adminStats.studentsNotTakenAtLeastOneExam}}</p>
+                      </div>
+                      <h6>Students who didn't attempted any Exam</h6>
+                  </div>
+              </div>
+            </div>
+          
+          </div>
+        </div>
+      
+    
+    </div>
+    <div class="col-12 mt-4" *ngIf="loadingError">
+      <p class="text-danger text-center fs-3"> <i class="fa fa-exclamation-triangle mr-2" ></i>Unable to fetch the data. Please try again later.</p>
+    </div>
+  </div>
+
+
+
+  <div class="chart-container">
+    <div class="chart-wrapper">
+      <h3>Exam Pass Statistics</h3>
+      <canvas id="barchart"  style="position: relative; height:80vh; width:80vw"></canvas>
+    </div>
+    <div class="chart-wrapper">
+      <h3>Exam Attempts Statistics </h3>
+      <canvas id="piechart"  style="position: relative; height:50vh; width:50vw"></canvas>
+    </div>
+  </div>
+
+  <div class="chart-container">
+    <div class="chart-wrapper">
+      <h3>Category Attempt Statistics</h3>
+      <canvas id="barchartType2"  style="position: relative; height:50vh; width:50vw"></canvas>
+    </div>
+    
+  </div>
+
+
+</div>

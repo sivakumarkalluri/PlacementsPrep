@@ -1,0 +1,63 @@
+.table-container {
+    width: 100%;
+    overflow-x: auto;
+  }
+  
+thead th{
+    background-color: #3C1975;
+    color: white;
+}
+thead tr th{
+    font-size: 14px;
+}
+tbody tr td{
+    font-size: 12px;
+
+}
+table{
+    margin: auto;
+}
+thead {
+    background: darkblue;
+    color: white;
+}
+.dropdown-container {
+    display: flex;
+    /* justify-content: space-between; */
+    gap: 10px; 
+    margin-bottom: 10px;
+}
+.has-search .form-control-feedback {
+    position: absolute;
+    z-index: 2;
+    display: block;
+    width: 2.375rem;
+    height: 2.375rem;
+    line-height: 2.375rem;
+    text-align: center;
+    pointer-events: none;
+    color: #aaa;
+}
+table {
+    width: 100%; /* Adjust as needed */
+  }
+  .heading{
+    font-family: 'Montserrat', sans-serif;
+  
+  }
+  .Pass{
+    
+    color: green;
+  }
+  .Fail{
+    color: red;
+  }
+  #userResults{
+    padding: 2rem;
+  }
+  @media (max-width: 600px) {
+    .dropdown-container{
+      display: flex;
+      flex-direction: column;
+    }
+  }

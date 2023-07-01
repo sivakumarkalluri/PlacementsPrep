@@ -1,0 +1,25 @@
+.avatar{
+    width:250px;
+    height:250px;
+    }
+    .row_pass {
+        display: none; /* Hide the new password and confirm password fields initially */
+    }
+    
+    .btnAction{
+        color: white;
+        background-color: #3C1975;
+    }
+    .profile{
+        color: #1a0e5f;
+        font-family: 'Montserrat', sans-serif;
+    }
+    .profileCard{
+        padding: 1%;
+        background-color: white;
+    }
+    @media (max-width: 600px) {
+.container{
+    padding-top: 20px;
+}
+    }

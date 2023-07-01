@@ -1,0 +1,97 @@
+
+<div id="userDashboard">
+  
+    <div class="container" style="margin-left: 10px;">
+    
+      <div class="row " *ngIf="dashBoardStats">
+        
+        <div class="col-lg-3 col-md-4 col-6 mb-4">
+          <div class="card text-center dashboardCard">
+            <div class="card-header bg-success text-white">
+              <div class="row align-items-center">
+                <div class="row">
+                    <div class="d-flex justify-content-center align-content-center dashicon">
+                        <i class="fa fa-book fa-4x cardIcon" aria-hidden="true"></i>
+                        <p class="Stat">{{dashBoardStats.totalExamsAvailable}}</p>
+                    </div>
+                    <p class="cardheader">Totals Exams Available</p>
+                </div>
+              </div>
+            </div>
+            
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-4 col-sm-6 col mb-4">
+          <div class="card text-center dashboardCard">
+            <div class="card-header bg-info text-white">
+              <div class="row align-items-center">
+                <div class="row">
+                    <div class="d-flex justify-content-around align-content-center">
+                        <i class="fa fa-pencil-square-o fa-4x cardIcon" aria-hidden="true"></i>
+                        <p class="Stat">{{dashBoardStats.totalExamsWritten}}</p>
+                    </div>
+                    <p class="cardheader">Total Exams Written</p>
+                </div>
+              </div>
+            </div>
+            
+            
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-4 col-sm-6 col mb-4">
+          <div class="card text-center dashboardCard">
+            <div class="card-header bg-primary text-white">
+              <div class="row align-items-center">
+                <div class="row">
+                    <div class="d-flex justify-content-around align-content-center">
+                        <!-- <i class="fa fa-list fa-xl-4x fa-sm-2x fa-4x"></i> -->
+                        <i class="fa fa-check-square-o fa-4x cardIcon" aria-hidden="true"></i>
+                        <p class="Stat">{{dashBoardStats.totalTestsAttempted}}</p>
+                    </div>
+                    <p class="cardheader">Total Tests Attempted</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-4 col-sm-6 col">
+          <div class="card text-center dashboardCard">
+            <div class="card-header bg-danger text-white">
+              <div class="row align-items-center">
+                <div class="row">
+                    <div class="d-flex justify-content-around align-content-center">
+                        <i class="fa fa-exclamation fa-4x cardIcon" aria-hidden="true"></i>
+                        <p class="Stat">{{dashBoardStats.totalExamsNotWritten
+                        }}</p>
+                    </div>
+                    <p class="cardheader">Total Exams Not Written</p>
+                </div>
+              </div>
+            </div>
+            
+          </div>
+        </div>
+       
+        
+      
+      </div>
+      <div class="col-12 mt-4" *ngIf="loadingError">
+        <p class="text-danger text-center fs-3"> <i class="fa fa-exclamation-triangle mr-2" ></i>Unable to fetch the data. Please try again later.</p>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1">
+          
+          <h4>Max Percentage obtained in each Exam</h4>
+
+            <div class="chart-container" style="position: relative; height:50vh; width:80vw">
+              <canvas id="barchart"></canvas>
+          </div>
+            
+          </div>
+        
+      </div>
+    </div>
+</div>

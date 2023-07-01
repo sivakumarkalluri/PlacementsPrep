@@ -1,0 +1,36 @@
+<div id="categoryComponent" style="padding-bottom: 40px;">
+    <div class="container">
+      <div class="row g-3 justify-content-center align-content-center"  *ngIf="categoryData">
+        <div class="col-12" id="addCategory" (click)="addCategory()">
+          <div class="card category p-3">
+            <div class="d-flex flex-column g-2 align-items-center">
+              <i class="fa-regular fa-square-plus" id="addBtn"></i>
+              <h3 class="fw-bold" style="color: rgb(58, 58, 169);">Add New Category</h3>
+            </div>
+          </div>
+        </div>
+        <div class="col-12" *ngFor="let category of categoryData">
+          <div class="card category p-3">
+            <div class="d-flex g-2 align-content-center">
+              <img src="assets/category_logo.png" alt="..." class="rounded-circle mr-4 catLogo">
+              <p class="catHeading">{{category.categoryName}}</p>
+            </div>
+            <div class="catContent mt-2">
+              <p>{{category.categoryDesc}}</p>
+              <div class="d-flex flex-wrap justify-content-lg-end mt-2 gap-2 justify-content-start">
+                <button type="button" class="btn actionBtn" style="background-color: rgb(58, 58, 169); color: white;" (click)="addExam(category)"><i class="fa-solid fa-square-plus mr-2"></i>Add Exam</button>
+                <button type="button" class="btn actionBtn" style="background-color: rgb(58, 58, 169); color: white;" (click)="editCategory(category.categoryId,category.categoryName,category.categoryDesc)"><i class="fa-solid fa-pen-to-square mr-2" ></i>Edit</button>
+                <button type="button" class="btn btn-danger actionBtn" (click)="deleteCategory(category.categoryId,category.categoryName)"><i class="fa-solid fa-trash mr-2" ></i>Delete</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 mt-4" *ngIf="loadingError">
+          <p class="text-danger text-center fs-3">
+            <i class="fa fa-exclamation-triangle mr-2"></i>Unable to fetch the data. Please try again later.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  

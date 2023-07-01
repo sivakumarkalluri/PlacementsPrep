@@ -1,0 +1,11 @@
+<div>
+    <div class="content-container">
+        <span id="close-icon" (click)="closeDialog()">
+            <i class="material-icons">close</i> <!-- Replace 'material-icons' with your desired icon font library -->
+          </span>
+        <span class="content-span full-width">{{data.message}}</span>
+
+    </div>
+    <button type="button" class="btn btnAction" style="background-color: rgb(180, 173, 173); color: black; border-radius: none;" id="no-button" [mat-dialog-close]="false">Cancel</button>
+    <button type="button" class="btn btnAction"  id="yes-button"  style="background-color: rgb(58, 58, 169); color: white; border-radius: none;" [mat-dialog-close]="true">Submit</button>
+</div>

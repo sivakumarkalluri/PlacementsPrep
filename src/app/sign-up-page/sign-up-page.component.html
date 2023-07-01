@@ -1,0 +1,122 @@
+<app-nav-bar></app-nav-bar>
+<div class="container-fluid px-1 px-md-5 px-lg-1 px-xl-5 py-5 mx-auto">
+    <div class="card card0 border-0">
+        <div class="row d-flex">
+            <div class="col-lg-5">
+                <div class="card1 pb-5">
+                    <div class="row">
+                        <img src="assets/logo.png" class="logo" style="width: 180px; height: 70px;">
+                    </div>
+                    <div class="row px-3 justify-content-center mt-4 mb-5 border-line">
+                        <img src="assets/signup_image.jpg" class="image">
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-7">
+                <div class="card2 card border-0 px-4 py-5">
+                    <div class="row mb-4 px-3">
+                        <h2 class="mb-4 mr-4 mt-2" style="text-align: center;">Sign Up </h2>
+                    </div>
+                    <form class="row g-3" [formGroup]="registerForm" (ngSubmit)="registerSubmit()">
+                    <div class="col-md-6">
+                        <label for="firstName" class="form-label">First Name</label>
+                        <input type="text" class="form-control" id="firstName" formControlName="firstName">
+                        <div class="form text text-danger" *ngIf="FirstName.errors?.['required'] && (FirstName.touched || FirstName.dirty)">
+                            <small class="font-weight-bold text-danger" >First Name is Required</small>
+                        </div>
+                        <div class="form text text-danger" *ngIf="FirstName.errors?.['pattern'] && (FirstName.touched || FirstName.dirty)">
+                            <small class="font-weight-bold text-danger" >First Name should start with alphabet</small>
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <label for="lastName" class="form-label">Last Name</label>
+                        <input type="text" class="form-control" id="lastName" formControlName="lastName">
+                        <div class="form text text-danger" *ngIf="LastName.errors?.['required'] && (LastName.touched || LastName.dirty)">
+                            <small class="font-weight-bold text-danger" >Last Name is Required</small>
+                        </div>
+                        <div class="form text text-danger" *ngIf="LastName.errors?.['pattern'] && (LastName.touched || LastName.dirty)">
+                            <small class="font-weight-bold text-danger" >Last Name should start with alphabet</small>
+                        </div>
+                      </div>
+                      <div class="col-md-12">
+                        <label for="email" class="form-label">Email</label>
+                        <input type="email" class="form-control" id="email" formControlName="email">
+                        <div class="form text text-danger" *ngIf="Email.errors?.['required'] && (Email.touched || Email.dirty)">
+                            <small class="font-weight-bold text-danger" >Email is Required</small>
+                        </div>
+                        <div class="form text text-danger" *ngIf="Email.errors?.['email'] && (Email.touched || Email.dirty)">
+                            <small class="font-weight-bold text-danger" >Email is Invalid</small>
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <label for="mobile" class="form-label">Mobile Number</label>
+                        <input type="mobile" class="form-control" id="mobile" formControlName="mobile">
+                        <div class="form text text-danger" *ngIf="Mobile.errors?.['required'] && (Mobile.touched || Mobile.dirty)">
+                            <small class="font-weight-bold text-danger" >Mobile Number is Required</small>
+                        </div>
+                        <div class="form text text-danger"  *ngIf="Mobile.errors?.['pattern'] && (Mobile.touched || Mobile.dirty)">
+                            <small class="font-weight-bold text-danger" >Mobile Number is Invalid</small>
+                        </div>
+                        <div class="form text text-danger" *ngIf="Mobile.errors?.['minlength'] && (Mobile.touched || Mobile.dirty)">
+                            <small class="font-weight-bold text-danger" >Mobile Number is Short</small>
+                        </div>
+                        <div class="form text text-danger" *ngIf="Mobile.errors?.['maxlength'] && (Mobile.touched || Mobile.dirty)">
+                            <small class="font-weight-bold text-danger" >Mobile Number is Long</small>
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <label for="gender" class="form-label">Gender</label>
+                        <div class="col-md-12"  style="display: flex; gap: 5px;">
+                            <div class="col-md-3" style="display: flex;">
+                                <select class="form-select" style="width: 180px;"  aria-label="Default select example" name="gender"  formControlName="gender">
+                                    <option value="" selected>Select Gender</option>
+                                    <option value="male">Male</option>
+                                    <option  value="female">Female</option>
+                                    <option  value="others">Others</option>
+
+
+                                </select>
+                            </div>
+                                
+                        </div>
+                        <div class="form text text-danger" *ngIf="Gender.errors?.['required'] && (Gender.touched || Gender.dirty)">
+                            <small class="font-weight-bold text-danger" >Gender is Required</small>
+                        </div>
+                      </div>
+                      
+                      <div class="col-md-6">
+                        <label for="password" class="form-label" >Password</label>
+                        <input type="password" class="form-control" id="password" formControlName="password">
+                        <div class="form text text-danger" *ngIf="Pwd.errors?.['required'] && (Pwd.touched || Pwd.dirty)">
+                            <small class="font-weight-bold text-danger" >Password is Required</small>
+                        </div>
+                        <div class="form text text-danger" *ngIf="Pwd.errors?.['minlength'] || Pwd.errors?.['maxlength'] && (Pwd.touched || Pwd.dirty)">
+                            <small class="font-weight-bold text-danger" >Password should be atleast 6 and at the max 15 characters long.</small>
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <label for="conpassword" class="form-label" >Confirm Password</label>
+                        <input type="password" class="form-control" id="conpassword" formControlName="rpwd" (click)="removeErrorMessage()">
+                        <div class="form text text-danger" [ngStyle]="{'display':repeatPass}" >
+                            <small class="font-weight-bold text-danger" >Password is not Matching</small>
+                        </div>
+                       
+                      </div>
+                      <div class="row mb-4 px-3" *ngIf="displayMsg">
+                        
+                            <small class="font-weight-bold text-danger" >{{displayMsg}}</small>
+                    </div>
+                    <div class="row mb-3 px-3 py-2">
+                        <button type="submit" class="btn btn-blue text-center" [disabled]="registerForm.invalid">Sign Up</button>
+                    </div>
+                    <p class="text-center fs-3" [ngClass]="isAccountCreated? 'text-success pb-1':'text-danger pb-1'"></p>
+                    <div class="row mb-4 px-3">
+                        <small class="font-weight-bold">Already have an account? <a class="text-danger " routerLink="/loginPage">Login</a></small>
+                    </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+</div>

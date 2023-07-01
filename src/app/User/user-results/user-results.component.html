@@ -1,0 +1,77 @@
+<div id="userResult">
+  <h2 id="resultHead">Results</h2>
+<div class="dropdown-container">
+   <div class="myDiv1">
+       <select class="form-select" (change)="searchExam()">
+         <option select="" value="none">Search By Exam</option>
+         <option *ngFor="let exam of exams" [value]="exam">{{exam}}</option>
+       </select>
+     </div>
+     
+   <div class="myDiv2">
+     <select class="form-select" (change)=" searchPassFail()">
+       <option select="" value="none">Pass / Fail</option>
+       <option value="Pass">Pass</option>
+       <option value="Fail">Fail</option>
+     </select>
+   </div>
+   <div class="myDiv3">
+     <select class="form-select" (change)="searchCategory()">
+       <option select="" value="none">Search By Category</option>
+         <option *ngFor="let category of categories" [value]="category">{{category}}</option>
+     </select>
+   </div>
+</div>
+
+<div class="table-container">
+   <table id="example" class="table table-striped table-bordered">
+       
+       <thead>
+         <tr>
+           <tr>
+
+               <th >Exam </th>
+               <th >Category</th>
+               <th>Total Questions</th>
+               <th >Attempted Questions </th>
+               <th >Not Attempted Questions</th>
+               <th>Correct Answers </th>
+               <th>Wrong Answers</th>
+               <th (click)="sort('total_MarksObtained')">Total Marks Obtained &nbsp;<i class="fa fa-sort" ></i></th>
+               <th >Exam Total &nbsp;</th>
+               <th (click)="sort('percentage')">Percentage Obtained &nbsp;<i class="fa fa-sort" ></i></th>
+               <th>Pass Percentage</th>
+               <th style="width: 10px;" >Pass/Fail &nbsp;</th>
+               <th (click)="sort('attemptedAt')">AttemptedAt &nbsp;<i class="fa fa-sort" ></i></th>
+               <th>Answer Sheet</th>
+
+           </tr>
+
+       </thead>
+      
+       <tbody>
+         
+         <tr *ngFor="let result of userResults | paginate:{ itemsPerPage: 6, currentPage: P } | orderBy:key:reverse">
+
+           <td>{{ result.exam_Name }}</td>
+           <td>{{ result.category_Name }}</td>
+           <td>{{result.examTotalQuestions}}</td>
+           <td>{{ result.attempted_Questions }}</td>
+           <td>{{ result.notAttempted_Questions }}</td>
+           <td>{{ result.correct_Answers }}</td>
+           <td>{{ result.wrong_Answers }}</td>
+           <td>{{ result.total_MarksObtained }}</td>
+           <td>{{ result.exam_Total }}</td>
+           <td>{{ result.percentage }} %</td>
+           <td>{{ result.passPercentageRequired }} %</td>
+           <td [ngClass]="result.passOrFail" class="fw-bold fs-6">{{ result.passOrFail }}</td>
+           <td>{{ result.attemptedAt }}</td>
+           <td><button class="btn review" (click)="AnswerSheet(result.testId)">Review</button></td>
+         </tr>
+     </table>  
+   </div>
+
+   <div class="mt-4">
+     <pagination-controls  (pageChange)="P = $event"></pagination-controls>
+    </div>
+    </div>

@@ -1,0 +1,32 @@
+
+<div class="sidenav" [ngClass]="collapsed ? 'sidenav-collapsed': ''">
+    <div class="logo-container">
+      <!-- <img src="assets\logo.png" width="50" height="70" alt="" class="logo" (click)="toggleCollapse()"> -->
+      <button class="logo" (click)="toggleCollapse()"><i class="fas fa-bars"></i></button>
+      <div class="logo-text" *ngIf="collapsed">Interview Prep</div>
+      <button class="btn-close" *ngIf="collapsed" (click)="closeSidenav()">
+        <i class="fa-solid fa-x fs-3" style="color: white; "></i>
+      </button>
+    </div>
+    <ul class="sidenav-nav">
+      <li class="sidenav-nav-item" *ngFor="let data of navData">
+        <div *ngIf="data.label!='LogOut'">
+          <a class="sidenav-nav-link" [routerLink]="[data.routeLink]"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{exact:true}" [tooltip]="data.label" tooltipPlacement="right">
+            <i class="sidenav-link-icon" [class]="data.icon"></i>
+            <span class="sidenav-link-text" *ngIf="collapsed">{{data.label}}</span>
+          </a>
+      </div>
+      <div *ngIf="data.label=='LogOut'">
+        <a class="sidenav-nav-link" (click)="LogOut()"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{exact:true}" [tooltip]="data.label" tooltipPlacement="right">
+          <i class="sidenav-link-icon" [class]="data.icon"></i>
+          <span class="sidenav-link-text" *ngIf="collapsed">{{data.label}}</span>
+        </a>
+    </div>
+      
+      </li>
+    </ul>
+  </div>

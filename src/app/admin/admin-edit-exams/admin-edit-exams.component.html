@@ -1,0 +1,41 @@
+<div id="editExams">
+  <h1 class="heading mb-4">Exams</h1>
+  <div class="table-container">
+    <table class="table table-bordered table-hover " >
+        <thead style="background-color: aqua;">
+          <tr style="background-color: rgb(58, 58, 169); text-align: center;">
+            <th>Category</th>
+            <th>Exam Name</th>
+            <th>Total Questions</th>
+            <th >Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <ng-container *ngFor="let category of transformedData">
+            <tr style="text-align: center;" >
+              <ng-container *ngIf="category.exams.length > 0; else emptyRow">
+                <td [attr.rowspan]="category.exams.length + 1" class="fw-bold">{{ category.category_Name }}</td>
+              </ng-container>
+            </tr>
+            <ng-container *ngFor="let exam of category.exams">
+              <tr style="text-align: center;">
+                <td>{{ exam.exam_Name }}</td>
+                <td>{{exam.exam_totalquestion}}</td>
+                <td class="d-flex gap-2">
+                    <button class="btn" style="background-color: rgb(58, 58, 169); font-size: 12px; color: white;" (click)="ViewQuestions(exam.exam_Id,exam.exam_Name)">View Questions</button>
+                  <button class="btn" style="background-color: rgb(58, 58, 169); font-size: 12px; color: white;" (click)="EditExam(exam.exam_Id)"><i class="fa fa-pencil mr-1"></i> Edit Exam</button>
+                  <button class="btn" style="background-color: rgb(58, 58, 169); font-size: 12px;  color: white;" (click)="AddQuestion(exam.exam_Id,exam.category_Id)"><i class="fa fa-plus mr-1"></i> Add Question</button>
+                  <button class="btn btn-danger " style="color: white; font-size: 12px;" (click)="DeleteExam(exam.exam_Id,exam.exam_Name)"><i class="fa fa-trash mr-1" ></i> Delete Exam</button>
+                </td>
+              </tr>
+            </ng-container >
+            <ng-template #emptyRow>
+              <tr>
+                <td colspan="3">No exams available in this category.</td>
+              </tr>
+            </ng-template>
+          </ng-container>
+        </tbody>
+      </table>
+  </div>
+</div>

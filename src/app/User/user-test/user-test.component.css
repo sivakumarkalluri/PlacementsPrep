@@ -1,0 +1,191 @@
+.timer{
+  position:absolute;
+  top: 13%;
+left:  75%;
+  width:  300px;
+  height: 300px;
+}
+
+.questioncard{
+  position: relative;
+}
+.smallTimer{
+visibility: hidden;
+}
+.attemptedCard{
+  border-radius: 5px;
+  color: white;
+  padding: 1%;
+  text-align: center;
+  max-width: 30%;
+  max-height: 100px;
+}
+.smallSubmit{
+  visibility: hidden;
+  }
+.cards{ 
+  padding: 2%;
+  max-width: 80%;
+}
+.testPage{
+  background-color: #eceff1;
+height: 100vh;
+  overflow-x: hidden;
+}
+
+.Options{
+  margin-top: 2%;
+  margin-bottom: 2%;
+}
+
+.questionCard{
+  font-family: 'Roboto', sans-serif;
+  margin-left: 1%;;
+  padding-top: 2%;
+  background-color: white;
+  padding-bottom: 3%;
+  padding-right: 2%;
+  padding-left: 2%;
+  margin-bottom: 30px;
+  width: 70%;
+  box-shadow: 5px 5px 5px gray;
+}
+
+.submit{
+  font-weight: bold;
+  color: white;
+  background-color: #3030a4;
+}
+
+.reportCard{
+  margin-top: 30px;
+  border: 1px solid black;
+  border-radius: 5px;
+  box-shadow: 5px 5px 5px rgb(220, 217, 217);
+
+  margin: auto;
+  max-width: 700px;
+  max-height: 600px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  padding-left: 5px;
+  padding-right: 5px;
+
+
+}
+.pass{
+  font-size: 60px;
+}
+.reportDetails {
+  font-family: 'Roboto', sans-serif;
+
+  margin: auto;
+}
+
+.examName{
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  height: 50px;
+  background-image: linear-gradient(to right top, #2259ab, #1e4ba1, #1d3e96, #1d308b, #1f217f);}
+.examPage{
+  position: relative;
+  top: -3%;
+}
+
+
+
+
+  @media (max-width: 600px) {
+    .examPage{
+      position: relative;
+      top: 0%;
+    }
+  .timer{
+    visibility: hidden;
+    font-size: 14px;
+    width:100px;
+   position: absolute;
+    height: 100px;
+  }
+  .formatTime{
+    font-weight: bold;
+
+    color: red;
+
+    font-size: 20px;
+  }
+  .progressBar{
+    visibility: hidden;
+  }
+  .submitBtn{
+    font-size: 12px;
+  }
+  .smallTimer{
+    visibility:visible
+  }
+  .examPage{
+    width: 100%;
+  }
+  
+.cards{ 
+  padding: 1%;
+  max-width: 100%;
+}
+.testPage{
+  background-color: #eceff1;
+height: 100vh;
+  overflow-x: hidden;
+}
+
+.Options{
+  margin-top: 2%;
+  margin-bottom: 2%;
+}
+
+.questionCard{
+  
+  width: 100%;
+  box-shadow: 5px 5px 5px gray;
+}
+
+.submit{
+  font-weight: bold;
+  color: white;
+  background-color: #3030a4;
+}
+
+.reportCard{
+  margin-top: 30px;
+  border: 1px solid black;
+  border-radius: 5px;
+  box-shadow: 5px 5px 5px rgb(220, 217, 217);
+
+  margin: auto;
+  max-width: 700px;
+  max-height: 600px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  padding-left: 5px;
+  padding-right: 5px;
+
+
+}
+
+.attemptedCard{
+  font-size: 12px;
+ padding-left: 1%;
+  max-width: 30%;
+  max-height: 100px;
+}
+.attemptedCardsSection{
+margin: auto;
+}
+.questionCard{
+  font-size: 14px;
+}
+
+.smallSubmit{
+visibility: visible;
+}
+        }

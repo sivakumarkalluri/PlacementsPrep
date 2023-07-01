@@ -1,0 +1,130 @@
+<div id="homePage">
+ 
+    <app-nav-bar></app-nav-bar>
+    <div id="heroSection">
+
+      <div class="heroContent">
+        <h1>Crack Jobs with a formulated Smart practice!<br></h1>
+            <h4>Aiming for cracking a Job? Then you should begin here!</h4>
+            <button type="submit" class="btn-pink submit-btn justify-content-center fw-bold" routerLink="/signUpPage">Sign Up Now<i class="fas fa-sign-in" style="margin-left: 10px;"></i></button>
+        
+      </div>
+      
+        <img src="assets/heroImg.png" class="heroImage">
+      
+    
+    </div>
+    
+    <h2 style=" text-align: center; margin-top: 30px; margin-bottom: 30px;" >Your Practice and Accuracy Influences Your Results ..!!
+    </h2>
+    <div id="examsSection" >
+      <div class="row g-3 examRow justify-content-center" >
+        <div class="col-xl-4 col-lg-6 col-md-12 col-sm-12" *ngFor="let exam of examsData">
+          <div class="card exam">
+            <img [src]="getImagePath(exam.examName)" class="card-img-top displayImg" alt="..." style="height: 195px;" />
+            <h4 class="examHeading">{{exam.examName}}</h4>
+            <div class="examContent">
+              <p>{{exam.examDescription}}</p>
+              <button type="submit" class="btn-pink submit-btn test-btn" (click)="TakeTest(exam.examID)">Take Test<i class="fa-solid fa-arrow-right"></i></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+
+    <div id="reviewSection" class="mt-4">
+      <img src="assets\dottedrows.png" alt="blob" id="blob1" />
+      <img src="assets\dottedrows.png" alt="blob" id="blob2" />
+      <div class="text-center">
+        <h1 id="reviewHeading">Success Stories</h1>
+        <div id="successBar"></div>
+        <p id="successDesc">Our students come from wide spectrum of backgrounds ranging from undergrads at small engineering
+          colleges to experienced engineers at Amazon/Samsung/Expedia.</p>
+      </div>
+      <div class="row g-5 mx-auto mt-4">
+        <!-- Card 1 -->
+            <div class="col-lg-4 col-md-6 col-12">
+                <div class="d-flex flex-column align-items-center box">
+                    <img src="assets\Reviews\review1.jpg" width="100px" height="100px" class="rounded-circle">
+                    <p class="pt-4 pb-4">I can't thank this Placement preparation website enough for helping me land my dream job at Amazon. The practice tests for Python were incredibly comprehensive, covering all the important topics. </p>
+                    
+                    <h6 class="fw-bold">- Raghav Kumar</h6>
+                    <div class="d-flex col-10 justify-content-center  gap-3">
+                        SDE 1 @ <img src="assets\Reviews\Amazon_logo.svg.png" width="50px" height="25px">
+                    </div>
+                </div>
+            </div>
+
+        <!-- Card 2 -->
+            <div class="col-lg-4 col-md-6 col-12">
+                <div class="d-flex flex-column align-items-center box">
+                    <img src="assets\Reviews\review2.jpeg" width="100px" height="100px"  class="rounded-circle">
+                   
+                   <p class="pt-4 pb-4">I'm thrilled to say that I got hired at Google, and this Placement preparation website played a significant role in my success. The C# practice tests were spot on, covering a wide range of concepts and difficulty levels. </p>
+                   <h6 class="fw-bold">- Vijay</h6>
+                   <div class="d-flex col-10 justify-content-center  gap-3">
+                    SDE 1 @ <img src="assets\Reviews\Google_Logo.jpg" width="50px" height="30px">
+                </div>
+                </div>
+
+            </div>
+        <!-- Card 3 -->
+            <div class="col-lg-4 col-md-6 col-12">
+                <div class="d-flex flex-column align-items-center box">
+                    <img src="assets\Reviews\review3.png" width="100px" height="100px"  class="rounded-circle">
+                    <p class="pt-4 pb-4">Thanks to this amazing Placement preparation website, I was able to crack the Java interview at XYZ Company. The extensive coverage of Java topics and the option to review detailed explanations made all the difference.</p>         
+                    <h6 class="fw-bold">- Ranvir Singh</h6>          
+                    <div class="d-flex col-10 justify-content-center gap-3">
+                      SDE 1 @ <img src="assets\Reviews\Microsoft_Logo.jpg" width="70px" height="30px" >
+                  </div>
+                </div>
+            </div>
+
+    </div>
+    </div>
+
+    <footer id="contactUs">
+      <div class="foot d-flex flex-lg-row flex-column justify-content-between">
+        <div class="foot_box">
+          <img src="assets/logo.png" width="150px" height="80px">
+
+        </div>
+        
+          <div class="foot_box">
+              <h5 class="fw-bold">Quick Links</h5>
+              <a href="#heroSection"><p>Home</p></a>
+              <a href="#"><p>Login</p></a>
+              <a href="#"><p>Sign Up</p></a>
+              <a href="#"><p>Tests</p></a>
+              <a href="#"><p>Contact Us</p></a>
+              
+          </div>
+          <div class="foot_box">
+              <h5 class="fw-bold">Contact Us</h5>
+              <div>
+                <h4>PlacementsPrep</h4>
+                <p class="pb-3">G275, BTM Phase 2, H-Block, Silk Board, Bengaluru-56006<br>
+                  <i class="fa-solid fa-phone"></i>+91 83920283922<br>
+                  <i class="fa-solid fa-envelope"></i> Support@prep.com
+                </p>
+              </div>
+              
+          </div>
+          <div class="foot_box">
+              <div class="social_media">
+                  <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                  <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                  <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                  <a href="#"><i class="fa-brands fa-youtube"></i></a>
+  
+              </div>
+          </div>
+      </div>
+      <div class="text-center pt-2 pb-2" style="background-color: #F4F4F4;">
+        ©  2023 PlacementsPrep.com. All rights reserved. Privacy Policy.
+      </div>
+  </footer>
+ 
+
+</div>
