@@ -31,14 +31,14 @@
                     <div class="row px-3">
                         <label class="mb-1"><h6 class="mb-0 text-sm">Password</h6></label>
                         <input type="password" name="password" formControlName="pwd" placeholder="Enter password">
-                        <div class="form text text-danger" *ngIf="Pwd.errors?.['required'] && (Email.touched || Email.dirty)">
+                        <div class="form text text-danger" *ngIf="Pwd.errors?.['required'] && (Pwd.touched || Pwd.dirty)">
                             <small>Password is Required</small>
                         </div>
                     </div>
-                    <div class="row px-3 mb-4">
+                    <div class="row mb-4 px-3" *ngIf="displayMsg">
                         
-                        <!-- <a href="#" class="ml-auto mb-0 text-sm">Forgot Password?</a> -->
-                    </div>
+                        <small class="font-weight-bold text-danger" >{{displayMsg}}</small>
+                </div>
                     <div class="row mb-3 px-3">
                         <button type="submit" class="btn btn-blue text-center" [disabled]="loginForm.invalid">Login</button>
                     </div>

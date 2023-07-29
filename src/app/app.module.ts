@@ -51,7 +51,10 @@ import { UserProfileComponent } from './User/user-profile/user-profile.component
 import { ExamInstructionsComponent } from './User/exam-instructions/exam-instructions.component';
 import { AnswerSheetComponent } from './User/answer-sheet/answer-sheet.component';
 import { UserAnswerSheetComponent } from './admin/user-answer-sheet/user-answer-sheet.component';
+import { NgxUiLoaderModule, NgxUiLoaderHttpModule } from "ngx-ui-loader";
+
 import { AddAdminComponent } from './admin/Dialogs/add-admin/add-admin.component';
+
 
 
 
@@ -90,7 +93,9 @@ import { AddAdminComponent } from './admin/Dialogs/add-admin/add-admin.component
     ExamInstructionsComponent,
     AnswerSheetComponent,
     UserAnswerSheetComponent,
-    AddAdminComponent
+   
+    AddAdminComponent,
+    
     
   ],
   imports: [
@@ -110,6 +115,11 @@ import { AddAdminComponent } from './admin/Dialogs/add-admin/add-admin.component
     MatProgressSpinnerModule,
     Ng2SearchPipeModule,
     MatInputModule,
+    NgxUiLoaderModule,
+    NgxUiLoaderHttpModule.forRoot({
+      showForeground:true,
+      
+    }),
 
 
 Ng2OrderModule,

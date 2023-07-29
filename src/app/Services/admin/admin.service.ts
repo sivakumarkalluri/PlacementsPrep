@@ -13,7 +13,7 @@ export class AdminService implements OnInit{
    
   }
   
-  baseUrl="https://app-examportal.azurewebsites.net/api";
+  baseUrl="https://placementsprepapi.azurewebsites.net/api";
 
   getAdminStats():any{
     return this.http.get(this.baseUrl+"/AdminDashboard/AdminStatistics", { observe: 'response' });

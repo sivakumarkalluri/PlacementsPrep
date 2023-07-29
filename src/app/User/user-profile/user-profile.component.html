@@ -6,7 +6,7 @@
         <!-- left column -->
         <div class="col-md-3">
             <div class="text-center">
-                <div *ngIf="userData.imagePath=='' || userData.imagePath=='none' ">
+                <div *ngIf="userData.imagePath=='' || userData.imagePath=='none' ||  userData.imagePath==null">
                     <img src="assets/default_profile.png" class="avatar rounded-circle img-thumbnail"
                     alt="avatar" style="color:  white;">
                 </div>

@@ -18,6 +18,7 @@ export class LoginPageComponent implements OnInit{
   }
 
   isUserValid:boolean=false;
+  displayMsg="";
   loginForm=new FormGroup({
     email:new FormControl("",[Validators.required,Validators.email]),
     pwd:new FormControl("",[Validators.required])
@@ -28,6 +29,14 @@ export class LoginPageComponent implements OnInit{
     this.authService.loginUser([this.loginForm.value.email as String,this.loginForm.value.pwd as String]).subscribe(res=>{
       if(res=="failure"){
         this.isUserValid=false;
+        this.toastr.error("Log in UnSuccessfull");
+      }
+      else if(res=="Not Found"){
+        this.displayMsg="Incorrect user Email ID";
+        this.toastr.error("Log in UnSuccessfull");
+      }
+      else if(res=="Wrong Password"){
+        this.displayMsg="Incorrect Password !";
         this.toastr.error("Log in UnSuccessfull");
       }
       else{
